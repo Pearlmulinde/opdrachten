@@ -1,3 +1,4 @@
+
 <?php
 $weeklyTemps = [
     "Maandag" => [ 
@@ -16,30 +17,10 @@ $weeklyTemps = [
         "Emmen" => 35
     ]
 ];
-$array=[];
-    // for ($i= 0; $i<3; $i++){
-
-$temp = array();
-foreach ($weeklyTemps as $item) {
-    foreach ($item as $key=>$value)
-     {
-        $temp[$key] = max(isset($temp[$key]) ? $temp[$key] : $value,$value);
-        $var= $temp[$key];
-         
-    }
-    // array_push($array,$var);
+foreach ($weeklyTemps as $day => $data) {
+    echo 'De hoogste temperatuur op ' . $day . ' was ';
+    $city = array_search( max($data) , $data);
+    echo $data[$city] . ' &#8451 in ' . $city . '.<br>'; 
 }
-    
-//  array_push($array,$key);
- echo '<pre>';
- print_r($temp);
- echo '<pre>';
 
-//print_r("The highest temperature in " ."$key is $value");
-//echo  $temp[$key];
-?>
-
-
-
-
-
+?>    
